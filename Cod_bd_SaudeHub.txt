@@ -1,0 +1,73 @@
+
+CREATE DATABASE IF NOT EXISTS saude_hub;
+
+
+USE saude_hub;
+
+
+CREATE TABLE Cliente (
+    idCliente INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    dataNasc VARCHAR(20),
+    cpf VARCHAR(20),
+    telefone VARCHAR(20),
+    endereco VARCHAR(255)
+);
+
+CREATE TABLE Fornecedor (
+    idFornecedor INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    cnpj VARCHAR(20)
+);
+
+CREATE TABLE Produto (
+    idProduto INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    preco DECIMAL(10, 2),
+    codigo VARCHAR(50)
+);
+
+CREATE TABLE Funcionario (
+    idFuncionario INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    dataNasc VARCHAR(20),
+    cpf VARCHAR(20),
+    senha VARCHAR(100)
+);
+
+CREATE TABLE Administrador (
+    idAdministrador INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    dataNasc VARCHAR(20),
+    cpf VARCHAR(20),
+    senha VARCHAR(100),
+    tipoAtividade VARCHAR(100)
+);
+
+CREATE TABLE Farmaceutico (
+    idFarmaceutico INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    dataNasc VARCHAR(20),
+    cpf VARCHAR(20),
+    crf VARCHAR(20),
+    uni VARCHAR(100),
+    senha VARCHAR(100)
+);
+
+CREATE TABLE MedicamentoComum (
+    idMedComum INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    tipoControle VARCHAR(100),
+    dosagem VARCHAR(100),
+    indicacao VARCHAR(255)
+);
+
+CREATE TABLE MedicamentoControlado (
+    idMedControlado INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    tipoControle VARCHAR(100),
+    dosagem VARCHAR(100),
+    numReceita VARCHAR(100),
+    valReceita VARCHAR(20),
+    descricao TEXT
+);
